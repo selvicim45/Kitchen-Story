@@ -1,0 +1,20 @@
+<input type="button" value="Home" class="btn btn-info" style="align-content:center;" (click)="showHomePageComponent()">
+&nbsp;
+
+<input type="button" value="Admin" class="btn btn-info" style="align-content:center;" (click)="showAdminComponent()">
+&nbsp;&nbsp;
+<div class="d-flex justify-content-center">
+<div class="card align-center" style="width: 18rem;">
+    <div>
+        <h5>Food Name:</h5>
+        <input type="text"  class="form-control" [(ngModel)]="newFoodItem.fname" name="foodName"><br/>
+        <h5>Food Price:</h5>
+        <input type="text"  class="form-control" [(ngModel)]="newFoodItem.fprice" name="foodPrice"><br/>
+        <h5>Descrition:</h5>
+        <input type="text" class="form-control"  [(ngModel)]="newFoodItem.fdesc"  name="foodDecs" ><br/>
+        <div class="d-flex justify-content-center">
+            <input type="button" value="Add" class="btn btn-primary" style="align-content:center;" (click)="saveNewFoodItemInfo()" >
+        </div>
+    </div>
+</div>
+</div>

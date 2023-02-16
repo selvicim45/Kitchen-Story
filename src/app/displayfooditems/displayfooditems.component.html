@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<table  style="height: 100px;" class="table table-bordered" mt-10>
+    <tr>
+      <th>Item ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Operations</th>
+    </tr>
+    
+    <tr *ngFor="let food of foodinfo">
+        
+      <td>{{food.fid}}</td>
+      <td>{{food.fname}}</td>
+      <td>{{food.fprice}}</td>
+      <td>{{food.fdesc}}</td>    
+      <tbody>  
+        <td>
+          <button type="button" class="btn btn-success" (click)="showUpdateFoodItem(food.fid)">Update</button>
+        </td>
+        <td>
+         <button type="button" class="btn btn-danger" (click)="deleteFoodItem(food.fid)">Delete</button>
+        </td>
+     </tbody>
+    </tr>   
+</table>
+</div>
+<div class="col-md-3"></div>
+</div>

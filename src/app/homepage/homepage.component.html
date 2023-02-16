@@ -1,0 +1,58 @@
+<div>
+    <input type="button" value="Admin" class="btn btn-primary" style="align-content:center;" (click)="showAdminComponent()">
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-header" mb-10>
+               <h5 class="card-title" style="text-align:center" mt-10> Search for Food Item </h5>
+            </div>    
+                               
+            <div class="card-body" mb-10>
+            
+                <select (change)="showFoodItemSelectedFromDropDown($event) ">
+                    <option *ngFor="let food of foodCategory" >
+                        {{food}}
+                    </option>
+                </select>
+                <p><span>You Selected: {{selection}}</span></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+    <table  style="height: 100px;" class="table table-bordered" mt-10>
+        <tr>   
+          <th>ID</th>      
+          <th>Name</th>
+          <th>Price</th>         
+          <th>Operations</th>
+        </tr>        
+        <tr *ngFor="let food of foodinfo">  
+          <td>{{food.fid}}</td>          
+          <td>{{food.fname}}</td>
+          <td>{{food.fprice}}</td>  
+          
+         <tbody>    
+          <td>
+          
+            <input type="checkbox"  id="first1" name="chkselected" [value]="food.fname" (change)="saveSelected($event)" >
+              
+          </td> 
+        </tbody>       
+        </tr>   
+    </table>
+    </div>
+    
+    <div>
+        <input type="button" class="btn btn-success" value="Add to Cart" (click)="sender()">   
+             
+    </div>  
+    <div class="col-md-3"></div>
+    </div>
+   
+    
+
